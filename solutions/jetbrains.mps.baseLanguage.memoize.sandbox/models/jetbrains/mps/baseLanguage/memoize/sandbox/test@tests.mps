@@ -875,8 +875,8 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="8394104674210963182" nodeInfo="nn">
               <node role="function" roleId="tp2c.1235746996653" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8394104674210963183" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1020370389589227629" resolveInfo="factorial" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="8394104674210954402" resolveInfo="Calculator.StaticNestedCalculator" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8394104674210963128" resolveInfo="factorial" />
               </node>
               <node role="parameter" roleId="tp2c.1235747002942" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8394104674210963184" nodeInfo="nn">
                 <property name="value" nameId="tpee.1068580320021" value="10" />
@@ -902,8 +902,8 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tp2c.CompactInvokeFunctionExpression" typeId="tp2c.1235746970280" id="8394104674210963191" nodeInfo="nn">
               <node role="function" roleId="tp2c.1235746996653" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8394104674210963192" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1020370389589227629" resolveInfo="factorial" />
                 <link role="classifier" roleId="tpee.1144433057691" targetNodeId="8394104674210954402" resolveInfo="Calculator.StaticNestedCalculator" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8394104674210963128" resolveInfo="factorial" />
               </node>
               <node role="parameter" roleId="tp2c.1235747002942" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8394104674210963193" nodeInfo="nn">
                 <property name="value" nameId="tpee.1068580320021" value="12" />
