@@ -3,8 +3,8 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/Extensions" />
   <property name="build.layout" location="${build.dir}/artifacts/Extensions" />
-  <property name="idea_home" location="${basedir}/../../../../../Applications/IntelliJ IDEA 12.app" />
-  <property name="plugins_home" location="${basedir}/../../../Library/Application Support/IntelliJIdea12" />
+  <property name="idea_home" location="${basedir}/../../../../../opt/idea" />
+  <property name="plugins_home" location="${basedir}/../../.IdeaIC13/config/plugins" />
   <property name="mps.webr-dnq" location="" />
   <property name="artifacts.mpsPlugin" location="${plugins_home}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -29,9 +29,10 @@
         <id>jetbrains.mps.baseLanguage.extensions</id>
         <name>MPS BaseLanguage Extensions</name>
         <description>A set of handy extensions to BaseLanguage, such as tail recursion optimization and function memoization</description>
-        <version>0.3</version>
+        <version>0.4.1</version>
         <vendor url="http://www.jetbrains.com">JetBrains</vendor>
         <depends>jetbrains.mps.core</depends>
+        <depends>jetbrains.mps.build</depends>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -69,10 +70,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.tailRecursion#4322693879000316866" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-TailRecursion-generator-template">
-      <fileset dir="${basedir}/languages/TailRecursion/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/TailRecursion/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-TailRecursion-languageModels">
-      <fileset dir="${basedir}/languages/TailRecursion/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/TailRecursion/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/BaseLanguageExtensions.zip/BaseLanguageExtensions/languages/Extensions/jetbrains.mps.baseLanguage.tailRecursion-src.jar">
       <fileset dir="${basedir}/languages/TailRecursion/generator/source_gen" includes="**/*.java" />
@@ -110,10 +111,10 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.memoize#1742094376850086130" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-memoize-generator-template">
-      <fileset dir="${basedir}/languages/memoize/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/memoize/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-memoize-languageModels">
-      <fileset dir="${basedir}/languages/memoize/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/languages/memoize/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/BaseLanguageExtensions.zip/BaseLanguageExtensions/languages/Extensions/jetbrains.mps.baseLanguage.memoize-src.jar">
       <fileset dir="${basedir}/languages/memoize/generator/source_gen" includes="**/*.java" />
@@ -140,12 +141,33 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.memoize.util.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.baseLanguage.memoize.util-models">
-      <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguage.memoize.util/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+      <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguage.memoize.util/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/BaseLanguageExtensions.zip/BaseLanguageExtensions/languages/Extensions/jetbrains.mps.baseLanguage.memoize.util-src.jar">
       <fileset dir="${basedir}/solutions/jetbrains.mps.baseLanguage.memoize.util/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/solutions/jetbrains.mps.baseLanguage.memoize.util/util.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-jetbrains.mps.baseLanguage.memoize.util-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/Extensions.build.jar" />
+    <mkdir dir="${build.tmp}/default/Extensions.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/Extensions.build.jar/META-INF/module.xml">
+      <module namespace="Extensions.build" type="solution" uuid="a974bf17-8a6e-4d70-8fb5-6788235ee120">
+        <dependencies />
+        <sources jar="Extensions.build-src.jar" descriptor="build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/BaseLanguageExtensions.zip/BaseLanguageExtensions/languages/Extensions/Extensions.build.jar">
+      <fileset dir="${build.tmp}/java/out/Extensions.build" />
+      <fileset dir="${basedir}/solutions/Extensions.build" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/Extensions.build.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-Extensions.build-models">
+      <fileset dir="${basedir}/solutions/Extensions.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/BaseLanguageExtensions.zip/BaseLanguageExtensions/languages/Extensions/Extensions.build-src.jar">
+      <fileset dir="${basedir}/solutions/Extensions.build/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/solutions/Extensions.build/build.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-Extensions.build-models" prefix="module/models" />
     </jar>
     <zip destfile="${build.layout}/BaseLanguageExtensions.zip">
       <fileset dir="${build.tmp}/default/BaseLanguageExtensions.zip" />
@@ -157,14 +179,14 @@
   
   <target name="fetchDependencies" />
   
-  <target name="build" depends="assemble, check" />
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.tmp}" />
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguage.tailRecursion, java.compile.jetbrains.mps.baseLanguage.tailRecursion#4322693879000316866, java.compile.jetbrains.mps.baseLanguage.memoize, java.compile.jetbrains.mps.baseLanguage.memoize#1742094376850086130, java.compile.jetbrains.mps.baseLanguage.memoize.util" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.baseLanguage.tailRecursion, java.compile.jetbrains.mps.baseLanguage.tailRecursion#4322693879000316866, java.compile.jetbrains.mps.baseLanguage.memoize, java.compile.jetbrains.mps.baseLanguage.memoize#1742094376850086130, java.compile.jetbrains.mps.baseLanguage.memoize.util, java.compile.Extensions.build" />
   
   <target name="processResources" />
   
@@ -177,6 +199,11 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
+      <plugin path="${artifacts.mpsPlugin}/mps-build" />
+      <library file="${artifacts.mpsPlugin}/mps-build/languages/build/jetbrains.mps.build.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -222,6 +249,7 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mpsPlugin}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
@@ -231,6 +259,7 @@
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
       <chunk>
+        <module file="${basedir}/solutions/Extensions.build/build.msd" />
         <module file="${basedir}/languages/memoize/memoize.mpl" />
         <module file="${basedir}/languages/TailRecursion/TailRecursion.mpl" />
       </chunk>
@@ -240,6 +269,9 @@
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
+      <macro name="idea_home" path="${idea_home}" />
+      <macro name="plugins_home" path="${plugins_home}" />
+      <macro name="mps.webr-dnq" path="${mps.webr-dnq}" />
     </generate>
   </target>
   
@@ -427,7 +459,20 @@
     </javac>
   </target>
   
+  <target name="java.compile.Extensions.build">
+    <mkdir dir="${basedir}/solutions/Extensions.build/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/Extensions.build" />
+    <javac destdir="${build.tmp}/java/out/Extensions.build" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/solutions/Extensions.build/source_gen" />
+      </src>
+      <classpath />
+    </javac>
+  </target>
+  
   <target name="cleanSources">
+    <delete dir="${basedir}/solutions/Extensions.build/source_gen" />
     <delete dir="${basedir}/languages/memoize/source_gen" />
     <delete dir="${basedir}/languages/TailRecursion/source_gen" />
     <delete dir="${basedir}/languages/TailRecursion/generator/source_gen" />
