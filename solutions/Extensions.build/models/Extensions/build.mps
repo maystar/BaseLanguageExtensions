@@ -58,9 +58,6 @@
         </node>
       </node>
     </node>
-    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6332794702258037756" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps.webr-dnq" />
-    </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="6332794702258037757" nodeInfo="ng">
       <link role="layout" roleId="3ior.7181125477683417255" targetNodeId="ffeo.7181125477683264500" resolveInfo="IDEA" />
       <node role="artifacts" roleId="3ior.7181125477683417254" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="6332794702258037758" nodeInfo="ng">
@@ -297,9 +294,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="4803917429250453168" nodeInfo="ng">
-      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
     </node>
   </root>
 </model>

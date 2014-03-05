@@ -5,7 +5,6 @@
   <property name="build.layout" location="${build.dir}/artifacts/Extensions" />
   <property name="idea_home" location="${basedir}/../../../../../opt/idea" />
   <property name="plugins_home" location="${basedir}/../../.IdeaIC13/config/plugins" />
-  <property name="mps.webr-dnq" location="" />
   <property name="artifacts.mpsPlugin" location="${plugins_home}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsPlugin}/build.properties" prefix="import.mpsPlugin" />
@@ -271,7 +270,6 @@
       </jvmargs>
       <macro name="idea_home" path="${idea_home}" />
       <macro name="plugins_home" path="${plugins_home}" />
-      <macro name="mps.webr-dnq" path="${mps.webr-dnq}" />
     </generate>
   </target>
   
