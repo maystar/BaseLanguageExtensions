@@ -26,9 +26,9 @@
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6332794702258037803" nodeInfo="nn">
                   <property name="head" nameId="3ior.8618885170173601779" value=".." />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6332794702258037804" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="Applications" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7636065788556469343" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="IntelliJ IDEA 13.app" />
+                    <property name="head" nameId="3ior.8618885170173601779" value="opt" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1821966550157735365" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="idea" />
                     </node>
                   </node>
                 </node>
@@ -52,9 +52,12 @@
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6116177109214574087" nodeInfo="nn">
                   <property name="head" nameId="3ior.8618885170173601779" value=".." />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6116177109214574111" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="Applications" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7636065788556469436" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="MPS 3.0.app" />
+                    <property name="head" nameId="3ior.8618885170173601779" value="opt" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1821966550157735523" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="MPS_versions" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1821966550157735631" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="MPS_3.1_EAP3" />
+                      </node>
                     </node>
                   </node>
                 </node>

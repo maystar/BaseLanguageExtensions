@@ -30,6 +30,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c358e6a3-b975-4f97-bc80-4f4e58b9c6a7(jetbrains.mps.baseLanguage.memoize.generator.template.main@generator)" />
     <dep model="r:d86f44a6-ea93-4f46-aeec-53d09ee769b1(jetbrains.mps.baseLanguage.memoize.util.caches)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MemoizeTest_Test.java" />
   </source>
   <source id="4821781367346987123" name="Calculator" hash="421htshvvcvt47qkor39edozagpzw9">
@@ -47,7 +48,6 @@
   <source id="94989256191809302" name="CornerCass_Test" hash="-7p30kih8il2ykt15fve7i8k5qji1pm8">
     <dep root="94989256191809309" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CornerCass_Test.java" />
   </source>
   <source id="94989256191809309" name="CornerCaseSpecialist" hash="4x7k3q9ni5p3e0cbzanl7gdbojej7iy">
